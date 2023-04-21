@@ -1,0 +1,639 @@
+* {
+    font-family: 'Baloo 2', cursive;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Header*/
+.header-pic {
+  width: 100%;
+  height: 22rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    margin-bottom: 0 !important;
+}
+
+.icons i {
+  font-size: 1.3rem;
+  color: rgb(253, 166, 134);
+  margin-right: 1rem;
+}
+
+.header-pic-text {
+  background: black;
+  position: relative;
+}
+
+.header-title {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*nav links*/
+nav {
+    background: orangered;
+    padding: 0 1rem;
+    display: grid;
+    place-items: center;
+}
+
+ nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+}
+
+nav ul li {
+    padding: 0;
+}
+
+nav > ul {
+    grid-auto-flow: column;
+}
+
+nav > ul >li {
+    margin: 0 1rem;
+}
+
+.dropdown {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    color: #fff;
+font-size: 1.125rem;
+}
+
+/*
+nav > ul > li  a {
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    color: blue;
+font-size: 1.1rem;   
+    padding: 1rem;
+}
+*/
+
+nav > ul > li a, nav > ul > li .dropdown {
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+font-size: 1.125rem;
+}
+nav > ul > li > a, nav > ul > li .dropdown {
+padding: 1rem 0.5rem;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav a:hover {
+  background: #fff;
+  color: orangered;
+}
+
+.dropdown-menu {
+  background: #fff;
+border-radius: 0.5rem;
+box-shadow: 0 0 0.5rem black;
+padding: 0.5em 0;
+  min-width: 15ch;
+  position: absolute;
+top: calc(100% - 0.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  transform: rotateX(-90deg) translateX(-50%);
+  transform-origin: top center;
+opacity: 0.3;
+  transition: 280ms all 120ms ease-out;
+  z-index: 9999;
+}
+
+.dropdown-menu a {
+  color: #3e3e3e;
+  display: block;
+padding: 0.5rem;
+  text-align: left;
+}
+
+.dropdown-menu a:hover {
+border-left: 0.3rem solid orangered;
+  border-radius: 3px;
+}
+
+.nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu{
+  opacity: 1;
+  transform: rotateX(0) translateX(-50%);
+  visibility: visible;
+}
+
+.nav-dropdown .dropdown{
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown .dropdown::after {
+  content: "";
+  border: 0.35rem solid transparent;
+  border-top-color: #fff;
+  margin-left: 0.25em;
+  transform: translateY(0.15em);
+}
+
+
+  .close{
+    display: none;
+  }
+  /*Nav-bar responsive 960px*/
+  @media screen and (max-width: 960px) {
+    
+    nav {
+      width: 25%;
+      height: 49vh;
+      position: absolute;
+      top: 55px;
+      right: 0;
+      display: none;
+      background: none;
+      background: orangered;
+      z-index: 100;
+    }
+  
+    .nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: orangered;
+    }
+  
+    .menu {
+      display: block;
+      font-size: 3rem;
+    }
+  
+    .menu i {
+      font-size: 2rem;
+    }
+  
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      padding: 0;
+      margin-right: 1rem;
+    }
+  
+    .close button {
+      background:orangered;
+      color: #000;
+      font-size: 2rem;
+      font-weight: bold;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  
+  /*Nav-bar responsive 600px*/
+  @media screen and (max-width: 600px) {
+    nav {
+      width: 30%;
+      position: absolute;
+      right: 0;
+    }
+  
+    .menu i {
+      font-size: 1.5rem;
+    }
+  
+    .close button {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .icons {
+      position: absolute;
+      top: 20px;
+      right: 0;
+    }
+  
+    .icons i {
+      font-size: 1rem;
+    }
+  
+    nav {
+      width: 35%;
+      height: 45vh;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      padding: 0;
+    }
+  
+    .nav a {
+      font-size: 0.9rem;
+    }  
+  }
+  @media screen and (max-width: 500px) {
+    .icons {
+      position: absolute;
+      top: 20px;
+      right: 0;
+    }
+  
+    .icons i {
+      font-size: 1rem;
+    }
+  
+    nav {
+      width: 35%;
+      height: 45vh;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      padding: 0;
+    }
+  
+    .nav a {
+      font-size: 0.9rem;
+    } 
+}
+
+
+/*Our People*/
+.our-people {
+    margin: 3rem;
+    width: auto;
+}
+
+.our-people h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.our-people p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.carousel {
+    display: none;
+    max-width: 80%;
+    margin: auto;
+}
+
+img {
+    vertical-align: middle;
+}
+  
+.carousel-container {
+    position: relative;
+    background: #000;
+    padding: 1rem;
+    margin: 1rem;
+    box-sizing: border-box;
+}
+  
+.carousel-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+  /* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+  /* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0 ;
+}
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: orangered;
+    color: #fff;
+}
+  
+  /* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 10px 2px;
+    background-color: #999999;
+    border-radius: 50%;
+    display: inline-block;
+transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+    background-color: #111111;
+}
+  /* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  @-webkit-keyframes fade {
+    from {
+    opacity: .4
+}
+    to {
+      opacity: 1
+}
+}
+  @keyframes fade {
+    from {
+    opacity: .4
+}
+    to {
+      opacity: 1
+}
+}
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+.prev,
+.next,
+.text {
+    font-size: 11px
+}
+}
+  
+#employee-login {
+    display: flex;
+    flex-direction: column;
+    max-width: 15rem;
+    margin: 2rem;
+    gap: 0.5rem;
+    border: 2px solid #000;
+    padding: 1rem
+}
+
+#employee-login h3 {
+    font-size: 1.3rem;
+    margin: 0;
+    text-decoration: underline;
+}
+
+input[type="text"] {
+    outline: none;
+    color: orangered;
+}
+
+input[type="submit"] {
+    width: 5rem;
+    padding: 0.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+#career {
+    margin: 3rem;
+    width: auto;
+}
+
+#career h1 {
+    font-size: 3rem;
+    width: auto;
+    margin: 0;
+} 
+
+#career p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+/*400px responsive*/
+@media (max-width: 400px){
+  .header-pic-text {
+    position: relative;
+  }
+  .header-pic {
+    height: 20rem;
+}
+  .header-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .our-people h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .our-people p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  #employee-login {
+    max-width: 12rem;
+  }
+
+  #career h1{
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  #career p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 700px){
+  .header-pic-text {
+    position: relative;
+  }
+  .header-pic {
+   height: 20rem;
+}
+ .header-title {
+   font-size: 4rem;
+   font-weight: bold;
+   color: #fff;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+
+ .our-people h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.our-people p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#employee-login {
+  max-width: 13rem;
+}
+
+#career h1{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#career p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+}
+
+/*footer*/
+footer {
+  background: rgb(51, 51, 80);
+  height: 20rem;
+  padding: 2rem;
+  margin-top: 5rem;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-links a{
+  text-decoration: none;
+font-size: 1.2rem;
+  color: #fff;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: orangered;
+}
+
+.footer-links li {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.copyright {
+  text-align: center;
+  margin: 2rem;
+}
+
+.opening-hours h3 {
+font-size: 1.5rem;
+  color: orangered;
+  margin: 0;
+  padding: 0;
+}
+
+.opening-days{
+    font-size: 1.1rem;
+    margin: 0.5rem;
+    color: #fff;
+}
+
+
+/*footer responsive 768px*/
+@media screen and (max-width: 768px) {
+  
+  .footer-links a {
+    font-size: 1rem;
+  }
+
+  .opening-days {
+    font-size: 0.9rem;
+  }
+
+  .opening-hours h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/*footer responsive 400px*/
+@media screen and (max-width: 400px) {
+  footer {
+    height: 15rem;
+    padding: 1rem;
+  }
+  .footer-links a {
+    font-size: 0.7rem;
+  }
+
+  .opening-days {
+    font-size: 0.5rem;
+  }
+
+  .opening-hours h3 {
+    font-size: 0.8rem;
+  }
+
+  .copyright {
+  font-size: 0.7rem;
+  }
+
+  .footer-icons i {
+    font-size: 1rem;
+  }
+
+  .footer-links-list {
+   margin: 0;
+   padding: 0;
+  }
+
+  .footer-icons {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aa8faa81cf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
+
+    <title>Order</title>
+    <link rel="stylesheet" href="order.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-hero">
+                <div class="top-header">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/logo-icon.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href="order.html">
+                            <i class="fa-solid fa-bag-shopping"><span>0</span></i>
+                        </a>
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div class="menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+
+            <nav>
+                <div class="close">
+                    <button id="close">X</button>
+                </div>
+                <ul class="nav">
+                    <li class="nav-link"><a href="index.html">HOME</a></li>
+                    <li class="nav-link"><a href="index.html#dish">MENU</a></li>
+                    <!--
+                    <li class="nav-dropdown">
+                        <button type="button" class="dropdown" aria-expanded="false">
+                            MENU
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Fried Rice</a></li>
+                            <li><a href="#">Shawarma</a></li>
+                            <li><a href="#">Snacks</a></li>
+                            <li><a href="#">Drinks</a></li>
+                            <li><a href="#">Moi Moi</a></li>
+                        </ul>
+                    </li>
+                    -->
+                    <li class="nav-dropdown">
+                            <button type="button" class="dropdown" aria-expanded="false">
+                                <a href="stores.html">STORES</a>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="stores.html#ijebu-ode1">Ijebu-Ode</a></li>
+                                <li><a href="stores.html#ibadan">Ibadan</a></li>
+                                <li><a href="stores.html#shagamu">Shagamu</a></li>
+                            </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <button type="button" class="dropdown" aria-expanded="false">
+                            <a href="brand.html">BRAND</a>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="brand.html#about-us">About Us</a></li>
+                            <li><a href="brand.html#history">History</a></li>
+                            <li><a href="our-people.html">Our People</a></li>
+                            <li><a href="our-people.html#career">Career</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-link"><a href="#"> NEWS</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        
+        <main>
+            <div class="dish-container">
+                <div class="dish-header">
+                    <h5 class="dish-title">DISH</h5>
+                    <h5 class="price">PRICE</h5>
+                    <h5 class="quantity">QUANTITY</h5>
+                    <h5 class="total">TOTAL</h5>
+                </div>
+                <div class="food-products">
+
+                </div>
+            </div>
+            <div class="check-out">
+                <button>Check Out</button>
+            </div>
+        </main>
+           
+
+        <footer>
+            <div class="footer-contents">
+                <div class="footer-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+
+                <div class="footer-links">
+                    <ul class="footer-links-list">
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Work With Us</a></li>
+                        <li><a href="#">Our People</a></li>
+                    </ul>
+                </div>
+
+                <div class="opening-hours">
+                    <h3>Opening Hours</h3>
+                    <div class="opening-days">Monday:       8am - 8pm.</div>
+                    <div class="opening-days">Tuesday:      8am - 8pm.</div>
+                    <div class="opening-days">Wednesday:    8am - 8pm.</div>
+                    <div class="opening-days">Thursday:     8am - 8pm.</div>
+                    <div class="opening-days">Friday:       8am - 8pm.</div>
+                    <div class="opening-days">Saturday:     8am - 8pm.</div>
+                    <div class="opening-days">Sunday:       10am - 9pm.</div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Copyright: All rights reserved 2023
+            </div>
+        </footer>
+
+    </div>
+   
+    <script src="dishes.js"></script> 
+    <script src="order.js"></script>
+</body>
+</html>

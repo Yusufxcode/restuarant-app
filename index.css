@@ -1,0 +1,794 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Baloo 2', cursive;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/*Header*/
+.header-pic {
+  width: 100%;
+  height: 30rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0 !important;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem;
+  z-index: 99;
+}
+
+.icons i {
+  font-size: 1.5rem;
+  color: rgb(253, 166, 134);
+  margin-right: 1rem;
+  position: relative;
+}
+
+.icons span {
+  color: orangered;
+  position:absolute;
+  bottom: 1rem;
+  right: 0.2px;
+  font-size: 1.3rem;
+}
+
+.menu{
+  display: none;
+}
+
+/*nav links*/
+nav {
+  background: orangered;
+  padding: 0 1rem;
+  display: grid;
+  place-items: center;
+}
+
+ nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+nav ul li {
+    padding: 0;
+}
+
+nav > ul {
+    grid-auto-flow: column;
+}
+
+nav > ul >li {
+    margin: 0 1rem;
+}
+
+.dropdown {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    color: #fff;
+    font-size: 1.125rem;
+}
+
+/*
+nav > ul > li  a {
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    color: blue;
+    font-size: 1.1rem;   
+    padding: 1rem;
+}
+*/
+
+nav > ul > li a, nav > ul > li .dropdown {
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    font-size: 1.125rem;
+}
+ nav > ul > li > a, nav > ul > li .dropdown {
+	padding: 1rem 0.5rem;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-link a:hover {
+  background: #fff;
+  color: orangered;
+}
+
+.dropdown-menu {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem black;
+  padding: 0.5em 0;
+  min-width: 15ch;
+  position: absolute;
+  top: calc(100% - 0.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  transform: rotateX(-90deg) translateX(-50%);
+  transform-origin: top center;
+  opacity: 0.3;
+  transition: 280ms all 120ms ease-out;
+  z-index: 9999;
+}
+
+.dropdown-menu a {
+  color: #3e3e3e;
+  display: block;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.dropdown-menu a:hover {
+  border-left: 0.3rem solid orangered;
+  border-radius: 3px;
+}
+
+.nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu{
+  opacity: 1;
+  transform: rotateX(0) translateX(-50%);
+  visibility: visible;
+}
+
+.nav-dropdown .dropdown{
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown .dropdown::after {
+  content: "";
+  border: 0.35rem solid transparent;
+  border-top-color: #fff;
+	margin-left: 0.25em;
+	transform: translateY(0.15em);
+}
+
+.close{
+  display: none;
+}
+/*Nav-bar responsive 960px*/
+@media screen and (max-width: 960px) {
+  
+  nav {
+    width: 25%;
+    height: 49vh;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    display: none;
+    background: none;
+    background: orangered;
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: orangered;
+  }
+
+  .menu {
+    display: block;
+    font-size: 3rem;
+  }
+
+  .menu i {
+    font-size: 2rem;
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    padding: 0;
+    margin-right: 1rem;
+  }
+
+  .close button {
+    background:orangered;
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/*Nav-bar responsive 600px*/
+@media screen and (max-width: 600px) {
+  nav {
+    width: 30%;
+    position: absolute;
+    right: 0;
+  }
+
+  .menu i {
+    font-size: 1.5rem;
+  }
+
+  .close button {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .icons {
+    position: absolute;
+    top: 20px;
+    right: 0;
+  }
+
+  .icons i {
+    font-size: 1rem;
+  }
+
+  nav {
+    width: 35%;
+    height: 45vh;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    padding: 0;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }  
+}
+@media screen and (max-width: 500px) {
+  .icons {
+    position: absolute;
+    top: 20px;
+    right: 0;
+  }
+
+  .icons i {
+    font-size: 1rem;
+  }
+
+  nav {
+    width: 35%;
+    height: 45vh;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    padding: 0;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  } 
+}
+
+
+
+/*Carousel*/
+.carousel {
+  display: none;
+  max-width: 80%;
+  margin: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.carousel-container {
+  position: relative;
+  background: orangered;
+  padding: 1rem;
+  margin: 1rem;
+  box-sizing: border-box;
+}
+
+.carousel-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 10px 2px;
+  background-color: #999999;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+  background-color: #111111;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px
+  }
+}
+
+/*responsive 960px*/
+@media screen and (max-width: 960px) {
+  .carousel-container h2 {
+    font-size: 2rem;
+  }
+}
+
+/*responsive 600px*/
+@media screen and (max-width: 600px) {
+  .carousel-container h2 {
+    font-size: 1rem;
+  }
+}
+
+/*food menu list*/
+.food-list h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background: orangered;
+  color: #fff; 
+  margin: auto;
+  width: 80%;
+  border-radius: 1rem 0;
+}
+
+.dish-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem;
+}
+
+.dish-selector .active {
+  color: #fff;
+  background: black;
+  box-shadow: 0 0 3rem orangered;
+}
+
+.dishes {
+  background: #fff;
+  color: orangered;
+  border-radius: 1rem 0;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.8);
+  transition: 1000ms background, box-shadow 200ms ease;
+}
+
+.dishes:hover, .dishes:focus-within {
+  color: #fff;
+  background: black;
+  box-shadow: 0 0 3rem orangered;
+}
+
+
+.dish-list {
+  background: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.8);
+  width: 15rem;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 5rem 0;
+  transition: 500ms box-shadow ease-out;
+}
+
+.dish-list:hover, .dish-list:focus {
+  box-shadow: 0 0 2rem red;
+}
+
+.dish-list img {
+  width: 12rem;
+  height: 12rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.8);
+}
+
+.dish-list h3 {
+  font-size: 1.5rem;
+}
+
+.dish-list .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+  box-sizing: border-box;
+}
+
+.order {
+  background: orangered;
+  color: #fff;
+  padding: 0.5rem;
+  border: none;
+  margin: 0.5rem;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.8);
+  width: 8rem;
+}
+
+.dish-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  row-gap: 3rem;
+}
+
+
+/*dish responsive 960*/
+@media(max-width: 960px) {
+  .dishes {
+    font-size: 0.9rem;
+  }
+
+  .dish-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*dish responsive 768*/
+@media(max-width: 768px) {
+  .dishes {
+    font-size: 0.7rem;
+  }
+
+  .dish-list {
+    width: 13rem;
+  }
+
+  .dish-list h3 {
+    font-size: 1.4rem;
+  }
+
+  .dish-list img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.8);
+}
+  .dish-container {
+    row-gap: 1.5rem;
+  }
+
+}
+/*dish responsive 600px*/
+@media(max-width: 600px) {
+  .food-list h2 {
+    font-size: 1.5rem;
+    width: 60%;
+  }
+
+  .dish-selector {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 2rem;
+  }
+
+  .dishes {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .dish-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    column-gap: 0;
+  }
+}
+
+/*dish responsive 400px*/
+@media(max-width: 400px) {
+  .food-list h2 {
+    font-size: 1.2rem;
+    width: 60%;
+  }
+
+  .dish-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1.5rem;
+  }
+
+  .dish-list h3 {
+    font-size: 1rem;
+  }
+
+  .dish-list {
+    max-width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dish-list img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .order {
+    width: 5.5rem;
+    padding: 0.1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+/*our people and location*/
+.our-people {
+ display: flex;
+ margin: 5rem;
+ gap: 1rem;
+}
+
+.location {
+  display: flex;
+  margin: 5rem;
+  gap: 1rem;
+}
+
+.staff-text h2, .location h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: orangered;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.staff-text p, .location p {
+  text-align: center;
+  line-height: 1.6rem;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+/*location and staff responsive 960px*/
+@media screen and (max-width: 960px) {
+  .our-people img, .location img {
+    width: 90%;
+  }
+
+  .our-people > .staff-text, .location > .location-text {
+    width: 30rem;
+  }
+
+  .staff-text h2, .location h2 {
+    font-size: 1.8rem;
+  }  
+}
+
+/*location and staff responsive 600px*/
+@media screen and (max-width: 600px) {
+  .our-people img, .location img {
+    width: 80%;
+  }
+
+  .our-people > .staff-text, .location > .location-text {
+    width: 25rem;
+  }
+
+  .staff-text h2, .location h2 {
+    font-size: 1.3rem;
+  }  
+}
+
+/*location and staff responsive 400px*/
+@media screen and (max-width: 400px) {
+  .our-people > .staff-text, .location > .location-text {
+    width: 15rem;
+  }
+
+  .staff-text h2, .location h2 {
+    font-size: 1.05rem;
+  }  
+}
+
+/*footer*/
+footer {
+  background: rgb(51, 51, 80);
+  height: 25rem;
+  width: auto;
+  padding: 2rem;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-icons {
+  margin-top: 3rem;
+}
+
+.footer-icons i {
+  font-size: 1.3rem;
+  color: rgb(253, 166, 134);
+  padding: 0.5rem;
+}
+
+.footer-links a{
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: orangered;
+}
+
+.footer-links li {
+  list-style: none;
+}
+
+.opening-hours h3 {
+  font-size: 1.5rem;
+  color: orangered;
+  margin: 0;
+  padding: 0;
+}
+
+.opening-days{
+  font-size: 1.1rem;
+  margin: 0.5rem;
+  color: #fff;
+}
+
+.copyright {
+  text-align: center;
+  margin: 2rem;
+  color: #fff;
+}
+
+/*footer responsive 768px*/
+@media screen and (max-width: 768px) {
+  
+  .footer-links a {
+    font-size: 1rem;
+  }
+
+  .opening-days {
+    font-size: 0.9rem;
+  }
+
+  .opening-hours h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/*footer responsive 400px*/
+@media screen and (max-width: 400px) {
+  footer {
+    height: 15rem;
+    padding: 1rem;
+  }
+  .footer-links a {
+    font-size: 0.7rem;
+  }
+
+  .opening-days {
+    font-size: 0.5rem;
+  }
+
+  .opening-hours h3 {
+    font-size: 0.8rem;
+  }
+
+  .copyright {
+  font-size: 0.7rem;
+  }
+
+  .footer-icons i {
+    font-size: 1rem;
+  }
+
+  .footer-links-list {
+   margin: 0;
+   padding: 0;
+  }
+
+  .footer-icons {
+    margin-top: 1rem;
+  }
+}
